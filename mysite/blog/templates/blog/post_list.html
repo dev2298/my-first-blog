@@ -6,17 +6,16 @@
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hi,this is Devansh Srivastava . I am a Undergrad in Computer Sceince from Vellore Institute of Technology : QS ranking 450-500 in subject wise CSE ranking.</p>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Frameworks learned so far Tkinter,Django in continuation.Next : Flask</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
